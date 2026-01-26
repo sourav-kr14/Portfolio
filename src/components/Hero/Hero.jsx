@@ -1,41 +1,129 @@
-import React from 'react';
-import Pic from "../Hero/Pic.jpeg"
+import React from "react";
+import { motion } from "framer-motion";
+
 const Hero = () => {
   return (
-    <section className="text-gray-600 body-font transition-colors duration-300">
-      <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center bg-blue-50">
-        <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center w-full">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-black ">
-          Hello,
-            <br className="hidden lg:inline-block" />
-           
-          </h1>
-          <h2>
-            I am Sourav Kumar
-          </h2>
-          <br />
-          <h3 className=' text-black text-2xl'>
-           With the aim to become DATA SCIENTIST OR SOFTWARE DEVELOPER in future.
-         
-          </h3>
-          <br />
-          <p className="mb-8 leading-relaxed text-black">
-            Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag selvage hot chicken authentic turmeric truffaut hexagon try-hard chambray.
+    <section
+      id="home"
+      className="relative bg-white pt-28 pb-20 overflow-hidden"
+    >
+      {/* background glow */}
+      <div className="hidden sm:block absolute top-[-120px] right-[-120px] w-96 h-96 bg-indigo-300 rounded-full blur-[140px] opacity-30" />
+
+      <div className="relative container mx-auto px-6 md:w-[85%] grid md:grid-cols-2 gap-14 items-center">
+
+        {/* LEFT CONTENT */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <p className="text-indigo-600 font-semibold mb-3">
+            Hello, I’m
           </p>
-          <div className="flex justify-center">
-            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-              Hire Me
-            </button>
-         
+
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4">
+            Sourav Kumar
+          </h1>
+
+          <h2 className="text-xl sm:text-2xl text-gray-700 font-medium mb-6">
+            Aspiring{" "}
+            <span className="text-indigo-600 font-semibold">
+              Software Developer
+            </span>{" "}
+            &{" "}
+            <span className="text-indigo-600 font-semibold">
+              Data Scientist
+            </span>
+          </h2>
+
+          <p className="text-gray-600 max-w-xl leading-relaxed mb-8">
+            MCA student at BIT Mesra focused on building scalable software
+            systems and data-driven solutions through hands-on projects
+            and industry experience.
+          </p>
+
+          <div className="flex gap-4 flex-wrap">
+            <a
+              href="#projects"
+              className="
+                px-8 py-3 rounded-xl
+                bg-indigo-600 text-white font-semibold
+                shadow-lg hover:bg-indigo-700
+                transition hover:scale-105
+              "
+            >
+              View Projects
+            </a>
+
+            <a
+              href="/Sourav_Kumar_Resume.pdf"
+              download
+              className="
+                px-8 py-3 rounded-xl
+                bg-white/60 backdrop-blur-md
+                border border-white/30
+                text-indigo-600 font-semibold
+                hover:bg-white/80
+                transition hover:scale-105
+              "
+            >
+              Download Resume
+            </a>
           </div>
-        </div>
-        <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-          <img
-            className="object-cover object-center rounded-full shadow-2xl bg-gray-400"
-            alt="hero"
-            src={Pic}
-          />
-        </div>
+        </motion.div>
+
+        {/* RIGHT IMAGE WITH PREMIUM ANIMATION */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="flex justify-center"
+        >
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative"
+          >
+            {/* rotating glow ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{
+                duration: 18,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              className="
+                absolute -inset-6 rounded-full
+                bg-gradient-to-r from-indigo-400 via-blue-200 to-blue-100
+                opacity-40 blur-2xl
+              "
+            />
+
+            {/* glass photo card */}
+            <motion.div
+              whileHover={{ scale: 1.05, rotate: 1 }}
+              transition={{ type: "spring", stiffness: 200, damping: 12 }}
+              className="
+                relative bg-white/60 backdrop-blur-xl
+                p-4 rounded-3xl
+                shadow-xl border border-white/30
+              "
+            >
+              <img
+                src="/profile.jpeg"
+                alt="Sourav Kumar"
+                loading="lazy"
+                className="rounded-2xl w-64 sm:w-72"
+              />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
       </div>
     </section>
   );

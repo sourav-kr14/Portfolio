@@ -1,39 +1,69 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../../index.css";
 
 const About = () => {
   return (
-    <section id="about" className="bg-white py-10 sm:py-16">
-      <div className="container mx-auto px-4 md:w-[85%]">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Left column */}
-          <div className="relative text-slate-200 text-6xl font-bold text-center xl:text-8xl">
-            ABOUT
-            <h1 className="absolute top-1/2 left-1/2 text-slate-800 text-3xl md:text-4xl -translate-x-1/2 -translate-y-1/2">
-              About Me
-            </h1>
-          </div>
+    <section
+      id="about"
+      className="relative bg-white py-16 sm:py-24 overflow-hidden"
+    >
+      {/* background glow */}
+      <div className="absolute left-[-120px] top-1/3 w-80 h-80 bg-indigo-300 rounded-full blur-[120px] opacity-30" />
 
-          {/* Right column */}
-          <div className="text-slate-700 text-lg space-y-4">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo nemo
-              excepturi ullam doloribus! Cum quasi quas sint at quam odit,
-              assumenda aliquid, quae ut vitae corrupti nihil.
+      <div className="relative container mx-auto px-6 md:w-[85%]">
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+              About Me
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I’m <span className="font-semibold text-indigo-600">Sourav Kumar</span>,
+              an MCA student at <span className="font-semibold">BIT Mesra</span>,
+              with a strong interest in software development and data science.
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Laborum, ea!
+
+            <p className="text-gray-600 leading-relaxed mb-4">
+              I enjoy building scalable applications, solving algorithmic
+              problems, and working with data to extract meaningful insights.
+              My learning is driven by hands-on projects and real-world
+              problem solving.
             </p>
-            <div className="pt-4 flex gap-4">
-              <a href="/resume.pdf" download className="primary-btn">
-                Download Resume
-              </a>
-              <a href="tel:+8210471902" className="outline-btn inline-block">
-                Contact Me
-              </a>
-            </div>
-          </div>
+
+            <p className="text-gray-600 leading-relaxed">
+              Currently, I’m focused on strengthening my full-stack,
+              and machine learning skills while preparing for full-time
+              software roles.
+            </p>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="
+              bg-white/60 backdrop-blur-xl rounded-2xl p-8
+              shadow-xl border border-white/30
+            "
+          >
+            <ul className="space-y-4 text-gray-700">
+              <li>🎓 MCA @ BIT Mesra (2024–2026)</li>
+              <li>💼 SDE Intern @ Armus Digital</li>
+              <li>🧠 Interests: Frontend, Backend, AI & ML</li>
+              <li>📍 Location: Ranchi, India</li>
+            </ul>
+          </motion.div>
+
         </div>
       </div>
     </section>
