@@ -1,6 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { 
+  SiReact, SiJavascript, SiHtml5, SiCss3, SiTailwindcss,
+  SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiMysql,
+  SiPython, SiPandas, SiNumpy, SiScikitlearn, SiGit,
+  SiGithub, SiPostman, SiFirebase, SiDocker
+} from "react-icons/si";
+import { FiCode, FiActivity } from "react-icons/fi";
 import "../../index.css";
+
+// Mapping names to icons to keep the data structure clean
+const iconMap = {
+  "React": <SiReact />, "JavaScript": <SiJavascript />, "HTML": <SiHtml5 />,
+  "CSS": <SiCss3 />, "Tailwind CSS": <SiTailwindcss />, "Node.js": <SiNodedotjs />,
+  "Express": <SiExpress />, "REST APIs": <FiCode />, "JWT Auth": <FiActivity />,
+  "MongoDB": <SiMongodb />, "PostgreSQL": <SiPostgresql />, "MySQL": <SiMysql />,
+  "Python": <SiPython />, "Pandas": <SiPandas />, "NumPy": <SiNumpy />,
+  "Scikit-learn": <SiScikitlearn />, "EDA": <FiActivity />, "Git": <SiGit />,
+  "GitHub": <SiGithub />, "Postman": <SiPostman />, "Firebase": <SiFirebase />,
+  "Docker": <SiDocker />
+};
 
 const skillGroups = [
   {
@@ -31,11 +50,9 @@ const Skills = () => {
       id="skills"
       className="relative bg-white py-16 sm:py-24 overflow-hidden"
     >
-      {/* background glow */}
       <div className="absolute right-[-120px] top-1/3 w-80 h-80 bg-indigo-300 rounded-full blur-[120px] opacity-30" />
 
       <div className="relative container mx-auto px-4 md:w-[85%]">
-        {/* HEADING */}
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
             Skills
@@ -46,7 +63,6 @@ const Skills = () => {
           </p>
         </div>
 
-        {/* SKILL CARDS */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillGroups.map((group, index) => (
             <motion.div
@@ -70,10 +86,11 @@ const Skills = () => {
                   <span
                     key={i}
                     className="
-                      text-sm px-3 py-1 rounded-full
+                      flex items-center gap-2 text-sm px-3 py-1 rounded-full
                       bg-indigo-100 text-indigo-700 font-medium
                     "
                   >
+                    {iconMap[skill]}
                     {skill}
                   </span>
                 ))}

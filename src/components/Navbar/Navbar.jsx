@@ -14,75 +14,86 @@ const navMenus = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState("home");
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // scroll spy
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
+          if (entry.isIntersecting) setActive(entry.target.id);
         });
       },
       { threshold: 0.6 }
     );
-
     navMenus.forEach((item) => {
       const section = document.getElementById(item.id);
       if (section) observer.observe(section);
     });
-
     return () => observer.disconnect();
   }, []);
 
-  // close mobile menu on scroll
-  useEffect(() => {
-    const closeOnScroll = () => setOpen(false);
-    window.addEventListener("scroll", closeOnScroll);
-    return () => window.removeEventListener("scroll", closeOnScroll);
-  }, []);
-
   return (
-    <nav className="fixed top-0 left-0 w-full z-50">
-      <div className="bg-white/70 backdrop-blur-xl border-b border-white/30">
-        <div className="container mx-auto px-6 md:w-[85%] h-20 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 w-full z-50 px-4 pt-4 sm:px-0 sm:pt-0">
+      <div 
+        className={`mx-auto transition-all duration-300 rounded-2xl sm:rounded-none ${
+          isScrolled 
+          ? "bg-white/80 backdrop-blur-xl border-b border-gray-100 shadow-md py-2" 
+          : "bg-transparent py-4"
+        }`}
+      >
+        <div className="container mx-auto px-6 md:w-[85%] flex items-center justify-between">
 
-          {/* LOGO */}
+          {/* 1. LOGO (FAR LEFT) */}
           <a
             href="#home"
-            className="text-xl font-extrabold text-gray-900 tracking-wide"
+            className="text-2xl font-black text-gray-900  flex items-center"
           >
-            Sourav
+            Sourav<span className="text-indigo-600">.</span>
           </a>
 
-          {/* DESKTOP MENU */}
-          <ul className="hidden md:flex items-center gap-8">
+          {/* 2. DESKTOP MENU (CENTER) */}
+          <ul className="hidden md:flex items-center gap-2">
             {navMenus.map((item) => (
               <li key={item.id} className="relative">
                 <a
                   href={item.link}
-                  className={`py-2 font-medium transition ${
-                    active === item.id
-                      ? "text-indigo-600"
-                      : "text-gray-700"
+                  className={`px-4 py-2 text-sm font-semibold transition-colors duration-300 relative z-10 ${
+                    active === item.id ? "text-indigo-600" : "text-gray-600 hover:text-gray-900"
                   }`}
                 >
                   {item.name}
                 </a>
-
-                {/* active underline */}
                 {active === item.id && (
-                  <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-indigo-500" />
+                  <motion.div
+                    layoutId="activeNav"
+                    className="absolute inset-0 bg-indigo-50 rounded-xl -z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
                 )}
               </li>
             ))}
           </ul>
 
-          {/* MOBILE ICON */}
+          {/* 3. CONTACT BUTTON (FAR RIGHT) */}
+          <div className="hidden md:block">
+            <a 
+              href="#contact" 
+              className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-95"
+            >
+              Let's Talk
+            </a>
+          </div>
+
+          {/* MOBILE TOGGLE */}
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden text-2xl text-gray-800"
+            className="md:hidden p-2 rounded-lg bg-gray-100 text-2xl text-gray-800"
           >
             {open ? <FiX /> : <FiMenu />}
           </button>
@@ -93,22 +104,21 @@ const Navbar = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.25 }}
-            className="md:hidden bg-white/80 backdrop-blur-xl border-b border-white/30 shadow-md"
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden mt-2 bg-white/95 backdrop-blur-2xl rounded-2xl border border-gray-100 shadow-2xl overflow-hidden"
           >
-            <ul className="flex flex-col items-center gap-6 py-6">
+            <ul className="flex flex-col p-4 gap-2">
               {navMenus.map((item) => (
                 <li key={item.id}>
                   <a
                     href={item.link}
                     onClick={() => setOpen(false)}
-                    className={`text-lg font-semibold transition ${
+                    className={`flex items-center px-4 py-3 rounded-xl text-lg font-bold transition-all ${
                       active === item.id
-                        ? "text-indigo-600"
-                        : "text-gray-700"
+                        ? "bg-indigo-600 text-white"
+                        : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
                     {item.name}
