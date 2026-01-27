@@ -1,13 +1,37 @@
 @import "tailwindcss";
-@layer components{
-    .primary-btn{
-        @apply bg-blue-700 text-white cursor-pointer hover:bg-blue-500 px-4 py-2 rounded-lg my-3
+
+/* 1. Explicitly define the dark variant for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components {
+    .primary-btn {
+        @apply bg-blue-700 text-white cursor-pointer hover:bg-blue-500 px-4 py-2 rounded-lg my-3 transition-colors;
     }
-    .outline-btn{
-        @apply ring-2 ring-blue-400 inset-0 text-blue-700 cursor-pointer rounded-lg  hover:bg-blue-200 hover:text-white p-2
- 
+    .outline-btn {
+        @apply ring-2 ring-blue-400 text-blue-700 cursor-pointer rounded-lg hover:bg-blue-200 hover:text-white p-2 transition-colors;
     }
 }
+
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    /* 2. Ensure global background and text colors change */
+    @apply bg-white text-gray-900 transition-colors duration-300;
+    @apply dark:bg-slate-950 dark:text-slate-50;
+  }
+}
+
+
+/* Direct CSS listener for the dark class */
+html.dark body {
+  background-color: #020617 !important; /* Deep slate/black */
+  color: #f8fafc !important;
+}
+
+/* Forces all sections to respect the dark background when the class is present */
+html.dark section {
+  background-color: transparent !important;
 }

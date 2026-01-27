@@ -3,7 +3,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     darkMode:'class',
   theme: {
-    darkMode:'class',
+
     extend: {
       colors: {
         primary: "#4300FF",

@@ -1,17 +1,24 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Sourav Kumar | Software Developer & Data Enthusiast</title>
-<meta
-  name="description"
-  content="MCA student at BIT Mesra with experience in software development, AI projects, and data-driven systems."
-/>
+    <title>Sourav Kumar | Portfolio</title>
 
-  </head>
-  <body>
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('theme');
+          const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+          if (theme === 'dark' || (!theme && supportDarkMode)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    </head>
+  <body class="bg-white dark:bg-slate-950 transition-colors duration-500">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
