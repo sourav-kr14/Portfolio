@@ -16,7 +16,6 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
 
-
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("theme");
@@ -36,18 +35,15 @@ const Navbar = () => {
       localStorage.setItem("theme", "light");
     }
   }, [isDark]);
- -
-
-  useEffect(() => {
+  -useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
   useEffect(() => {
     const root = window.document.documentElement;
-    
+
     if (isDark) {
       // console.log("Switching to DARK mode");
       root.classList.add("dark");
@@ -57,23 +53,20 @@ const Navbar = () => {
       root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
-    
- 
+
     // console.log("Current HTML classes:", root.className);
   }, [isDark]);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-4 pt-4 sm:px-0 sm:pt-0">
-   
-      <div 
+      <div
         className={`mx-auto transition-all duration-300 rounded-2xl sm:rounded-none ${
-          isScrolled 
-          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-gray-100 dark:border-slate-800 shadow-md py-2" 
-          : "bg-transparent py-4"
+          isScrolled
+            ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-gray-100 dark:border-slate-800 shadow-md py-2"
+            : "bg-transparent py-4"
         }`}
       >
         <div className="container mx-auto px-6 md:w-[85%] flex items-center justify-between">
-
           {/* 1. LOGO */}
           <a
             href="#home"
@@ -82,33 +75,34 @@ const Navbar = () => {
             Sourav<span className="text-indigo-600">.</span>
           </a>
 
-      
-       {/* 2. DESKTOP MENU */}
-<ul className="hidden md:flex items-center gap-2">
-  {navMenus.map((item) => (
-    <li key={item.id} className="relative">
-      <a
-        href={item.link}
-        
-        onClick={() => setActive(item.id)} 
-        className={`px-4 py-2 text-sm font-semibold transition-colors duration-300 relative z-10 ${
-          active === item.id 
-            ? "text-indigo-600 dark:text-indigo-400" 
-            : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
-        }`}
-      >
-        {item.name}
-      </a>
-      {active === item.id && (
-        <motion.div
-          layoutId="activeNav" // Framer Motion uses this ID to "slide" the pill
-          className="absolute inset-0 bg-indigo-50 dark:bg-indigo-900/40 rounded-xl -z-0"
-          transition={{ type: "spring", stiffness: 380, damping: 30 }}
-        />
-      )}
-    </li>
-  ))}
-</ul>
+          {/* 2. DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-2">
+            {navMenus.map((item) => (
+              <li
+                key={item.id}
+                className="relative"
+              >
+                <a
+                  href={item.link}
+                  onClick={() => setActive(item.id)}
+                  className={`px-4 py-2 text-sm font-semibold transition-colors duration-300 relative z-10 ${
+                    active === item.id
+                      ? "text-indigo-600 dark:text-indigo-400"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </a>
+                {active === item.id && (
+                  <motion.div
+                    layoutId="activeNav" // Framer Motion uses this ID to "slide" the pill
+                    className="absolute inset-0 bg-indigo-50 dark:bg-indigo-900/40 rounded-xl -z-0"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
 
           <div className="flex items-center gap-4">
             {/* DARK MODE BUTTON */}
@@ -117,13 +111,17 @@ const Navbar = () => {
               className="p-2.5 rounded-xl bg-gray-100 dark:bg-slate-800 text-gray-800 dark:text-yellow-400 transition-all active:scale-90"
               aria-label="Toggle Dark Mode"
             >
-              {isDark ? <FiSun className="text-xl" /> : <FiMoon className="text-xl" />}
+              {isDark ? (
+                <FiSun className="text-xl" />
+              ) : (
+                <FiMoon className="text-xl" />
+              )}
             </button>
 
             {/* 3. CONTACT BUTTON */}
             <div className="hidden md:block">
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-indigo-700 shadow-lg shadow-indigo-200 transition-all active:scale-95"
               >
                 Let's Talk
