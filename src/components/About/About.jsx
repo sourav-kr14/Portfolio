@@ -42,7 +42,7 @@ const About = () => {
                 in building scalable applications and extracting data-driven insights.
               </p>
               <p>
-                Currently, I'm bridging the gap between <span className="text-indigo-600 dark:text-indigo-400 font-medium">Full-Stack Development</span> 
+                Currently, I'm bridging the gap between <span className="text-indigo-600 dark:text-indigo-400 font-medium">Full-Stack Development </span> 
                 and <span className="text-indigo-600 dark:text-indigo-400 font-medium">Machine Learning</span>, turning complex 
                 logic into user-friendly software.
               </p>
