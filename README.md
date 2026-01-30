@@ -1,12 +1,38 @@
-# React + Vite
+# Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive web application built using React, Vite, and Tailwind CSS, focusing on clean UI, usability, and performance.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- Responsive and user-friendly interface
+- Dark mode support
+- Clean and minimal UI design
+- Optimized component-based architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- **Frontend:** React, JavaScript
+- **Styling:** Tailwind CSS
+- **Build Tool:** Vite
+- **Linting:** ESLint
 
-## Expanding the ESLint configuration
+## 📂 Project Structure
+```bash
+src/
+├── components
+├── pages
+├── assets
+└── main.jsx
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ▶️ Run Locally
+Follow these steps to run the project on your local machine:
+```bash
+npm install
+npm run dev
+```
+## 🔗 Live Demo
+- https://portfolio-sigma-lime-37.vercel.app/
+
+## 👨‍💻 Author
+Sourav Kumar
+- GitHub: https://github.com/sourav-kr14
+- LinkedIn: https://linkedin.com/in/thesouravv/
