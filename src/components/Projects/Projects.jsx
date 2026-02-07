@@ -15,6 +15,7 @@ const projects = [
     ],
     tech: ["React", "Node.js", "Express", "MongoDB", "AI"],
     link: "https://github.com/sourav-kr14/ai-resume-builder",
+    liveLink: null, 
   },
   {
     title: "AI Disease Prediction",
@@ -26,7 +27,8 @@ const projects = [
       "Implemented robust pipelines for symptom-based inputs",
     ],
     tech: ["Python", "Scikit-learn", "Flask", "Pandas", "ML"],
-    link: "https://https://github.com/sourav-kr14/AI-Powered-Disease-Prediction-System.com/sourav-kr14",
+    link: "https://github.com/sourav-kr14/AI-Powered-Disease-Prediction-System",
+    liveLink: "https://ai-powered-disease-prediction-syste.vercel.app/", 
   },
   {
     title: "AI-PDF Intelligence",
@@ -38,7 +40,8 @@ const projects = [
       "Automated PDF parsing and summarization logic",
     ],
     tech: ["Python", "LangChain", "Vector DB", "RAG", "NLP"],
-    link: "https://https://github.com/sourav-kr14/Chat-To-PDF.com/sourav-kr14",
+    link: "https://github.com/sourav-kr14/Chat-To-PDF",
+    liveLink: null,
   },
 ];
 
@@ -48,12 +51,13 @@ const Projects = () => {
       id="projects"
       className="relative bg-white dark:bg-slate-950 py-16 sm:py-24 overflow-hidden transition-colors duration-500"
     >
+      {/* Background Glow */}
       <div className="absolute left-[-120px] top-1/3 w-80 h-80 bg-indigo-300 dark:bg-indigo-600/20 rounded-full blur-[120px] opacity-30 dark:opacity-20" />
 
       <div className="relative container mx-auto px-4 md:w-[85%]">
         {/* SECTION HEADING */}
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -76,9 +80,8 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-
               className="
-                interactive-card group
+                interactive-card group flex flex-col
                 bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl rounded-3xl p-8
                 shadow-xl border border-white/30 dark:border-slate-800
                 hover:shadow-indigo-500/10 hover:-translate-y-2 transition-all duration-300
@@ -95,7 +98,7 @@ const Projects = () => {
                 {project.description}
               </p>
 
-              <ul className="text-gray-500 dark:text-gray-400 text-sm space-y-2 mb-6">
+              <ul className="text-gray-500 dark:text-gray-400 text-sm space-y-2 mb-6 flex-grow">
                 {project.highlights.map((point, i) => (
                   <li key={i} className="flex items-start gap-2">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
@@ -104,7 +107,7 @@ const Projects = () => {
                 ))}
               </ul>
 
-              {/* TECH STACK */}
+          
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tech.map((tech, i) => (
                   <span
@@ -117,15 +120,31 @@ const Projects = () => {
                 ))}
               </div>
 
-              {/* LINK */}
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:gap-3 transition-all"
-              >
-                Explore Code <FiExternalLink />
-              </a>
+            
+              <div className="flex items-center gap-5 mt-auto">
+      
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                >
+                  <FiGithub /> Source
+                </a>
+
+             
+                {project.liveLink && (
+                  <motion.a
+                    whileHover={{ x: 3 }}
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-sm font-bold text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 transition-all"
+                  >
+                    Live Demo <FiExternalLink />
+                  </motion.a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
