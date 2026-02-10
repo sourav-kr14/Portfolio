@@ -51,7 +51,6 @@ const Projects = () => {
       id="projects"
       className="relative bg-white dark:bg-slate-950 py-16 sm:py-24 overflow-hidden transition-colors duration-500"
     >
-      {/* Background Glow */}
       <div className="absolute left-[-120px] top-1/3 w-80 h-80 bg-indigo-300 dark:bg-indigo-600/20 rounded-full blur-[120px] opacity-30 dark:opacity-20" />
 
       <div className="relative container mx-auto px-4 md:w-[85%]">

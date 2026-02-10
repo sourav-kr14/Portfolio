@@ -107,7 +107,7 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* FOOT NOTE */}
+          {/* FOOT  */}
           <div className="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800 flex flex-col items-center gap-2">
             <p className="flex items-center gap-2 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
               <FiMapPin className="text-indigo-500" /> Ranchi, India
@@ -119,7 +119,7 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/* MINI FOOTER */}
+      {/*  FOOTER */}
       <div className="mt-16 text-center pb-8">
         <p className="text-sm text-gray-400 dark:text-gray-600">
           © 2026 Designed & Built by{" "}

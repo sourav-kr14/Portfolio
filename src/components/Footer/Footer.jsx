@@ -4,7 +4,6 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 const Footer = () => {
   return (
     <footer className="relative bg-white overflow-hidden">
-      {/* glass top border */}
       <div className="border-t border-white/30 backdrop-blur-xl bg-white/60">
         <div className="container mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
 
@@ -22,7 +21,7 @@ const Footer = () => {
             Built with React • Tailwind CSS • Framer Motion
           </p>
 
-          {/* RIGHT - SOCIALS */}
+          {/* SOCIALS */}
           <div className="flex items-center gap-4">
             <a
               href="mailto:souravkr93@gmail.com"

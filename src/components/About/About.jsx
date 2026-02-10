@@ -49,7 +49,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* 2. EDUCATION CARD */}
+          {/* EDUCATION  */}
           <motion.div
             custom={1}
             initial="hidden"
@@ -104,7 +104,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* 4. LOCATION CARD */}
+          {/* 4. LOCATION  */}
           <motion.div
             custom={3}
             initial="hidden"
@@ -123,7 +123,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* 5. FOCUS CARD */}
+          {/* 5. FOCUS  */}
           <motion.div
             custom={4}
             initial="hidden"

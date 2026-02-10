@@ -117,7 +117,7 @@ const Hero = () => {
               }}
               className="relative z-10"
             >
-              {/* Image Card  */}
+              {/* Image*/}
               <div className="bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl p-4 rounded-[40px] shadow-2xl border border-white/50 dark:border-slate-800 relative overflow-hidden group">
                 <img
                   src="/profile.jpeg"

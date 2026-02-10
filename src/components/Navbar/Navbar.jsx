@@ -75,7 +75,7 @@ const Navbar = () => {
             Sourav<span className="text-indigo-600">.</span>
           </a>
 
-          {/* 2. DESKTOP MENU */}
+          {/*DESKTOP MENU */}
           <ul className="hidden md:flex items-center gap-2">
             {navMenus.map((item) => (
               <li
@@ -118,7 +118,7 @@ const Navbar = () => {
               )}
             </button>
 
-            {/* 3. CONTACT BUTTON */}
+            {/*CONTACT BUTTON */}
             <div className="hidden md:block">
               <a
                 href="#contact"
