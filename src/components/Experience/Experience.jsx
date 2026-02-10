@@ -13,9 +13,10 @@ const Experience = () => {
      
       certificateLink: "https://drive.google.com/file/d/1y0NxS2ahzHCYg7PqnUTTCHxzdnFouXa7/view?usp=sharing", 
       contributions: [
-        "Collaborated on developing fintech solutions, focusing on enhancing user experience and optimizing financial data processing modules.",
-        "Contributed to the development of scalable features for the Bluestock platform, ensuring high performance and security compliance.",
-        "Participated in code reviews and agile sprints to streamline the deployment of new software updates and bug fixes."
+        "Engineered real-time preview features and cross-section state management to ensure <span class='text-indigo-600 dark:text-indigo-400 font-bold underline decoration-indigo-500/30 underline-offset-4'>100%</span> data consistency across multiple financial views.",
+        "Designed responsive React UI modules for financial dashboards, improving user navigation by <span class='text-indigo-600 dark:text-indigo-400 font-bold underline decoration-indigo-500/30 underline-offset-4'>25%</span>.",
+
+        "Actively participated in Agile sprints and peer code reviews, delivering clean, maintainable code and contributing to internal technical documentation."
       ],
       techStack: ["React", "JavaScript", "Tailwind CSS", "Git", "Node.js"]
     },
@@ -26,7 +27,7 @@ const Experience = () => {
       duration: "June 2025 – July 2025",
       certificateLink: "https://drive.google.com/file/d/1i0z1dk_yY74JCt8IcvUppOsmUTi5NASP/view?usp=sharing", 
       contributions: [
-        "Engineered robust backend business logic and secure authentication modules, contributing across the full development lifecycle from design to testing.",
+        "Developed secure authentication flows and core business logic across backend and frontend layers.",
         "Refactored frontend modules to improve reusability and optimized rendering cycles, reducing application load latency by <span class='text-indigo-600 dark:text-indigo-400 font-bold underline decoration-indigo-500/30 underline-offset-4'>25%</span>.",
         "Diagnosed and resolved complex full-stack defects, improving system stability and achieving a <span class='text-indigo-600 dark:text-indigo-400 font-bold underline decoration-indigo-500/30 underline-offset-4'>15%</span> overall performance improvement."
       ],
