@@ -98,9 +98,9 @@ const About = () => {
               <FiBriefcase className="text-2xl" />
             </div>
             <div>
-              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Past Internship</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Recent Internship</p>
               <h4 className="font-bold text-gray-900 dark:text-white">SDE Intern</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-500">Armus Digital (June - July 2025)</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">Bluestock Fintech (December 2025 - January 2026)</p>
             </div>
           </motion.div>
 
@@ -119,7 +119,7 @@ const About = () => {
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Location</p>
               <h4 className="font-bold text-gray-900 dark:text-white">Ranchi, India</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-500">Open to Remote & Relocation</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">Open to Remote & Relocation</p>
             </div>
           </motion.div>
 
@@ -138,7 +138,7 @@ const About = () => {
             <div>
               <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">Current Focus</p>
               <h4 className="font-bold text-gray-900 dark:text-white">AI-Powered SaaS</h4>
-              <p className="text-xs text-gray-600 dark:text-gray-500">Full-Stack & ML</p>
+              <p className="text-xs text-gray-500 dark:text-gray-300">Full-Stack & ML</p>
             </div>
           </motion.div>
 
