@@ -12,7 +12,6 @@ const Leadership = lazy(() => import("./components/LeaderShip/Leadership"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
 
 function App() {
-
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -36,13 +35,12 @@ function App() {
         <Suspense
           fallback={<div className="h-screen bg-white dark:bg-slate-950" />}
         >
-          <Skills />
+          <Experience />
           <SectionDivider />
 
           <Projects />
           <SectionDivider />
-
-          <Experience />
+          <Skills />
           <SectionDivider />
 
           <Leadership />
