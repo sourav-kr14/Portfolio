@@ -35,9 +35,9 @@ const Hero = () => {
               sequence={[
                 "Software Developer",
                 2000,
-                "Data Analyst",
+                "AI/ML Engineer",
                 2000,
-                "Full Stack Engineer",
+                "Full Stack Developer",
                 2000,
               ]}
               wrapper="span"
