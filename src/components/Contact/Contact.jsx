@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative bg-white dark:bg-slate-950 py-16 sm:py-24 overflow-hidden transition-colors duration-500"
+      className="relative bg-white dark:bg-slate-950 pt-16 sm:pt-24 pb-8 overflow-hidden transition-colors duration-500"
     >
       <div className="absolute left-[-120px] top-1/2 w-80 h-80 bg-indigo-300 dark:bg-indigo-600/10 rounded-full blur-[120px] opacity-30 dark:opacity-20" />
 
@@ -26,20 +26,13 @@ const Contact = () => {
           <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
             Whether you have a question or just want to say hi, my inbox is
             always open. I'm currently looking for new opportunities in
-            <span className="font-bold text-gray-900 dark:text-white">
-              {" "}
-              SDE{" "}
-            </span>
+            <span className="font-bold text-gray-900 dark:text-white"> SDE </span>
             and
-            <span className="font-bold text-gray-900 dark:text-white">
-              {" "}
-              AI/ML
-            </span>
-            .
+            <span className="font-bold text-gray-900 dark:text-white"> AI/ML </span>.
           </p>
         </div>
 
-        {/* CONTACT CARD */}
+        {/* CONTACT */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,21 +68,9 @@ const Contact = () => {
           {/* SOCIAL LINKS */}
           <div className="mt-12 flex justify-center gap-5 flex-wrap">
             {[
-              {
-                href: "https://github.com/sourav-kr14",
-                icon: <FiGithub />,
-                label: "GitHub",
-              },
-              {
-                href: "https://linkedin.com/in/thesouravv",
-                icon: <FiLinkedin />,
-                label: "LinkedIn",
-              },
-              {
-                href: "https://leetcode.com/u/sourav-kr14/",
-                icon: <SiLeetcode />,
-                label: "LeetCode",
-              },
+              { href: "https://github.com/sourav-kr14", icon: <FiGithub />, label: "GitHub" },
+              { href: "https://linkedin.com/in/thesouravv", icon: <FiLinkedin />, label: "LinkedIn" },
+              { href: "https://leetcode.com/u/sourav__14/", icon: <SiLeetcode />, label: "LeetCode" },
             ].map((social, idx) => (
               <a
                 key={idx}
@@ -107,7 +88,7 @@ const Contact = () => {
             ))}
           </div>
 
-          {/* FOOT  */}
+          {/* LOCATION*/}
           <div className="mt-12 pt-8 border-t border-gray-100 dark:border-slate-800 flex flex-col items-center gap-2">
             <p className="flex items-center gap-2 text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest">
               <FiMapPin className="text-indigo-500" /> Ranchi, India
@@ -119,15 +100,30 @@ const Contact = () => {
         </motion.div>
       </div>
 
-      {/*  FOOTER */}
-      <div className="mt-16 text-center pb-8">
-        <p className="text-sm text-gray-400 dark:text-gray-600">
-          © 2026 Designed & Built by{" "}
-          <span className="text-indigo-600 dark:text-indigo-500 font-bold">
-            Sourav Kumar
-          </span>
-        </p>
-      </div>
+      {/* FOOTER SECTION */}
+      <footer className="mt-20 border-t border-gray-100 dark:border-white/5 pt-8">
+        <div className="container mx-auto px-4 flex flex-col items-center">
+   
+          <nav className="flex gap-6 mb-6">
+            {['About', 'Experience','Projects','Skills'  ].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`}
+                className="text-xs font-medium text-gray-500 hover:text-indigo-500 transition-colors"
+              >
+                {item}
+              </a>
+            ))}
+          </nav>
+
+          <p className="text-sm text-gray-400 dark:text-gray-600">
+            © {new Date().getFullYear()} Designed & Built by{" "}
+            <span className="text-indigo-600 dark:text-indigo-500 font-bold">
+              Sourav Kumar
+            </span>
+          </p>
+        </div>
+      </footer>
     </section>
   );
 };

@@ -5,9 +5,11 @@ import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi"; // Added Sun and Mo
 const navMenus = [
   { name: "Home", link: "#home", id: "home" },
   { name: "About", link: "#about", id: "about" },
+   { name: "Experience", link: "#experience", id: "experience" },
+    { name: "Projects", link: "#projects", id: "projects" },
   { name: "Skills", link: "#skills", id: "skills" },
-  { name: "Projects", link: "#projects", id: "projects" },
-  { name: "Experience", link: "#experience", id: "experience" },
+ 
+ 
   { name: "Contact", link: "#contact", id: "contact" },
 ];
 

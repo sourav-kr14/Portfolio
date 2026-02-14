@@ -10,7 +10,6 @@ const Projects = lazy(() => import("./components/Projects/Projects"));
 const Experience = lazy(() => import("./components/Experience/Experience"));
 const Leadership = lazy(() => import("./components/LeaderShip/Leadership"));
 const Contact = lazy(() => import("./components/Contact/Contact"));
-
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
